@@ -20,7 +20,9 @@ for (const calendarValue of calendarValues) {
 				description: calendarValue.description,
 				imgSrc: calendarValue.imgSrc
 			});
-
+			setTimeout(() => {
+				popup.open();
+			}, 0);
 		});
 	}
 }
