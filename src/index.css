@@ -88,6 +88,18 @@ img {
 	transform: scale(1.1);
 }
 
+.calendar__day_active .calendar__day-preview {
+	display: none;
+}
+
+.calendar__day_active .calendar__popup {
+	display: block;
+}
+
+.calendar__popup {
+	display: none;
+}
+
 @media (max-width: 600px) {
 	.calendar {
 		grid-template-columns: 1fr 1fr;
@@ -125,6 +137,7 @@ img {
 	top: 3vmin;
 	right: 3vmin;
 	font-size: 1.5em;
+	cursor: pointer;
 }
 
 .popup__body {
