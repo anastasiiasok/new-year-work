@@ -15,14 +15,21 @@ for (const calendarValue of calendarValues) {
 
 	if (calendarPopupNode !== undefined) {
 		calendarDayNode.addEventListener('click', () => {
+
+			if (calendarDayNode.classList.contains('calendar__day_active')) {
+				return false;
+			}
+
 			const popup = new Popup({
 				title: calendarValue.title,
 				description: calendarValue.description,
 				imgSrc: calendarValue.imgSrc
 			});
-			setTimeout(() => {
-				popup.open();
-			}, 0);
+			popup.open();
+			popup.closeSubj.subscribe(item => {
+				calendarDayNode.classList.add('calendar__day_active');
+			});
+
 		});
 	}
 }

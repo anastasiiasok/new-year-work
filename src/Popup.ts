@@ -1,3 +1,5 @@
+import { Observable, Subject } from "rxjs";
+
 export interface OptionsPopup {
 	title?: string;
 	description?: string;
@@ -21,6 +23,7 @@ export class Popup {
 	private options: OptionsPopup;
 	private activeClassPopup: string = 'popup_open';
 	private activeClassBody: string = 'body_overflow-hidden';
+	public closeSubj: Subject<boolean> = new Subject();
 
 	constructor(options: OptionsPopup) {
 		this.options = options;
@@ -103,13 +106,18 @@ export class Popup {
 	}
 
 	public open(): void {
-		this.nodes.popupNode.classList.add(this.activeClassPopup);
-		document.body.classList.add(this.activeClassBody);
+		setTimeout(() => {
+			this.nodes.popupNode.classList.add(this.activeClassPopup);
+			document.body.classList.add(this.activeClassBody);
+		}, 0);
 	}
 
 	public close(): void {
-		this.nodes.popupNode.classList.remove(this.activeClassPopup);
-		document.body.classList.remove(this.activeClassBody);
+		setTimeout(() => {
+			this.nodes.popupNode.classList.remove(this.activeClassPopup);
+			document.body.classList.remove(this.activeClassBody);
+			this.closeSubj.next(true);
+		}, 0);
 	}
 
 	public edit(options: OptionsPopup): void {
