@@ -8,3 +8,20 @@ export interface CalendarValue {
 	description?: string;
 	imgSrc?: string;
 }
+
+export interface OptionsPopup {
+	title?: string;
+	description?: string;
+	imgSrc?: string;
+}
+
+export interface PopupNodes {
+	popupNode: HTMLDivElement;
+	popupCloseNode: HTMLButtonElement;
+	popupBodyNode: HTMLDivElement;
+	popupContentNode: HTMLDivElement;
+	popupTitleNode: HTMLHeadingElement;
+	popupDescriptionNode: HTMLParagraphElement;
+	popupImgNode: HTMLImageElement;
+}
+

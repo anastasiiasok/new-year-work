@@ -1,20 +1,5 @@
 import { Observable, Subject } from "rxjs";
-
-export interface OptionsPopup {
-	title?: string;
-	description?: string;
-	imgSrc?: string;
-}
-
-export interface PopupNodes {
-	popupNode: HTMLDivElement;
-	popupCloseNode: HTMLButtonElement;
-	popupBodyNode: HTMLDivElement;
-	popupContentNode: HTMLDivElement;
-	popupTitleNode: HTMLHeadingElement;
-	popupDescriptionNode: HTMLParagraphElement;
-	popupImgNode: HTMLImageElement;
-}
+import { OptionsPopup, PopupNodes } from "./interfaces";
 
 export class Popup {
 
